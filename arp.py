@@ -1,0 +1,20 @@
+def GetArpHardwareTypeAsHexArray(arpAsHexArray):
+    return arpAsHexArray[0:2]
+def GetArpProtocolTypeAsHexArray(arpAsHexArray):
+    return arpAsHexArray[2:4]
+def GetArpHardwareSizeAsHexArray(arpAsHexArray):
+    return arpAsHexArray[4:5]
+def GetArpProtocolSizeAsHexArray(arpAsHexArray):
+    return arpAsHexArray[5:6]
+def GetArpOpcodeAsHexArray(arpAsHexArray):
+    return arpAsHexArray[6:8]
+def GetArpProtocolSizeAsHexArray(arpAsHexArray):
+    return arpAsHexArray[5:6]
+def GetArpSenderMacAddressAsHexArray(arpAsHexArray):
+    return arpAsHexArray[6:12]
+def GetArpSenderIpAddressAsHexArray(arpAsHexArray):
+    return arpAsHexArray[12:16]
+def GetArpTargetMacAddressAsHexArray(arpAsHexArray):
+    return arpAsHexArray[16:22]
+def GetArpTargetIpAddressAsHexArray(arpAsHexArray):
+    return arpAsHexArray[22:26]
