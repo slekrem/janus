@@ -1,9 +1,9 @@
 import socket
 
-from janusAlertBoard import *
+from janusAlertBoard import JanusAlert
 from frame import *
 from eth import *
-from arp import *
+from arp import * 
 
 def PrintFrame(frameAsHexArray):
     print('[*] Frame:')
@@ -34,6 +34,7 @@ def PrintArp(arpAsHexArray):
 def Main():
     packetSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW)
     packetSocket.bind(("wlan0", 0x0806))
+    janusAlert = JanusAlert()
     while True:
         frameAsShellCode = packetSocket.recvfrom(2048)[0]
         if not frameAsShellCode:
@@ -43,7 +44,7 @@ def Main():
         PrintFrame(frameAsHexArray)
         PrintEth(frameAsHexArray[0:])
         PrintArp(frameAsHexArray[14:])
-        FlashGreenForASecond()
+        janusAlert.alert(0.1)
 
     arpSocket.close()
 
