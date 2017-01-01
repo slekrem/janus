@@ -1,8 +1,11 @@
 import socket
+import os
 
 from frame import *
 from arpDetector import *
 from janusAlertBoard import JanusAlert
+
+clear = lambda: os.system('clear')
 
 def Main():
     packetSocket = socket.socket(socket.AF_PACKET, socket.SOCK_RAW)
@@ -14,6 +17,7 @@ def Main():
             break
         frameAsHexArray = GetFrameAsHexArray(frameAsShellCode)
 
+        clear()
         PrintFrame(frameAsHexArray)
         PrintEth(frameAsHexArray[0:])
         PrintArp(frameAsHexArray[14:])
