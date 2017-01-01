@@ -2,8 +2,13 @@ from eth import *
 from arp import *
 
 def PrintFrame(frameAsHexArray):
+
     print('[*] Frame:')
-    print('[+]                                 ' + str(frameAsHexArray))
+    print('[+]                                 ' + str(frameAsHexArray[0:6]))
+    print('[+]                                 ' + str(frameAsHexArray[6:12]))
+    print('[+]                                 ' + str(frameAsHexArray[12:18]))
+    print('[+]                                 ' + str(frameAsHexArray[12:18]))
+    print('[+]                                 ' + str(frameAsHexArray[18:]))
     print('')
 
 def PrintEth(ethAsHexArray):
